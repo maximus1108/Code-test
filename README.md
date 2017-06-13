@@ -4,7 +4,7 @@ We want to see how you would approach building a simple web application that is 
 * Each result will display a user's avatar, name and job role.
 * I will be able to view and interact with the UI regardless of the viewport size of the device I am using.
 
-Please focus on writing well-documented code that efficiently solves this problem. We would rather you submitted a subset of features with reasoning for your work than a rushed, comprised version of the entire app.
+Please focus on writing well-documented code that efficiently solves this problem. We would rather you submitted a subset of features with reasoning for your work than a rushed, compromised version of the entire app.
 
 ## Setup
 Fork this repo and the rest is up to you! We’re not gonna tell you what stack to choose, we’re interested to see how you work. Pick the tools you feel are most appropriate for the job and get coding 💃.
