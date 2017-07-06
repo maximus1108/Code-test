@@ -7,7 +7,7 @@ import './results.less';
 //used to render search results
 const SearchResults = ({
   className,
-  results //current search results to be rendered below
+  children //current search results to be rendered below
 }) => {
   return (
     <section
@@ -17,7 +17,7 @@ const SearchResults = ({
     <header className="section-header">
       <h2>Results</h2>
     </header>
-      {results}
+      {children}
     </section>
   )
 }

@@ -13,7 +13,9 @@ var server = new WebpackDevServer(compiler, {
   //set root for server
   contentBase: path.resolve(__dirname.replace(/scripts/, ""), "static"),
   //set path for server to watch for updates
-  publicPath: "/src/"
+  publicPath: "/src/",
+
+  disableHostCheck: true
 });
 
 //listen on port

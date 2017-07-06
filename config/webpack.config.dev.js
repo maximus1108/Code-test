@@ -34,6 +34,10 @@ module.exports = {
               test: /\.less$/,
               exclude: path.resolve(root, "node_modules"),
               loaders: ["style-loader", "css-loader", "less-loader"]
+            },
+            {
+              loader: "url-loader",
+              test: /\.png|jpg$/i
             }
         ]
     },

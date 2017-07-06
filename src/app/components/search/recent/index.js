@@ -7,7 +7,8 @@ import './recent.less';
 //render recent searches
 const RecentSearches = ({
   className,
-  recentSearches //list of recent searches passed as prop from Search class
+  children, //list of recent searches passed as prop from Search class
+  onClickRecentItem
 }) => {
 
 
@@ -22,9 +23,10 @@ const RecentSearches = ({
     </header>
     <ul>
       {
-        recentSearches.map((search, i) => (
+        children.map((search, i) => (
             <li key={i}>
               <RecentItem
+                onClick={onClickRecentItem}
                 text={search}
               />
             </li>

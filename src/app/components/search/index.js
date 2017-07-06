@@ -70,15 +70,14 @@ class Search extends React.Component {
     //this will cause component to re-render
     .then((json) => {
 
-
       //if the search wasnt empty, add it to the list
-      if(searchString !== "") {
+      if(searchString !== "" && this.state.recent.indexOf(searchString) === -1) {
 
         //add new search string to list of recent searches
-        let recentSearches = [...this.state.recent, searchString];
+        let recentSearches = [searchString, ...this.state.recent];
 
-        //ensure recent search list is only event 5 items in length
-        if(recentSearches.length === 6) recentSearches.shift();
+        //ensure recent search list is only event
+        if(recentSearches.length === 6) recentSearches.pop();
 
         this.setState({
           results: json,
@@ -150,19 +149,28 @@ class Search extends React.Component {
           onInputChange={this.handleOnInputChange.bind(this)} //pass down handleOnInputChange for onchange event on input box
           onReturnPress={
             (e)=> {
-              if(e && e.which == 13) this.doSearch.call(this); //handler for if return key is press on input box, doSearch if so
+              if(e && e.which === 13) this.doSearch.call(this); //handler for if return key is press on input box, doSearch if so
             }
           }
         />
         <div className="search-results-recent-wrapper">
           <RecentSearches
             className="search-section inline"
-            recentSearches={this.state.recent} // pass down list of recent searches to presentational component
-          />
-          <SearchResults
-            className="search-section inline"
-            results={results}
-          />
+            onClickRecentItem={
+              (string) => {
+                //update searchInput to recent search item
+                this.searchInput = string;
+                //and search it again
+                this.doSearch();
+              }
+            }
+          //pass down list of recent searches as children to presentational component
+          >
+            {this.state.recent}
+          </RecentSearches>
+          <SearchResults className="search-section inline">
+            {results}
+          </SearchResults>
         </div>
       </article>
     )
