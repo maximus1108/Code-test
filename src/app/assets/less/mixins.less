@@ -1,0 +1,56 @@
+//mixins for prefixing, etc;
+
+//gradient mixin - accepts 2 colors for gradient and a fallback
+.linear-gradient-background(@angle; @color1; @color2; @fallback) {
+  background: @fallback;
+  background: -webkit-linear-gradient(@angle, @color1, @color2);
+  background: -o-linear-gradient(@angle, @color1, @color2);
+  background: -moz-linear-gradient(@angle, @color1, @color2);
+  background: linear-gradient(@angle, @color1, @color2);
+}
+
+// radial gradient mixin - accepts a set of rules and a fallback
+.radial-gradient-background(@rules; @fallback) {
+  background: @fallback;
+  background: -webkit-radial-gradient(@rules);
+  background: -o-radial-gradient(@rules);
+  background: -moz-radial-gradient(@rules);
+  background: radial-gradient(@rules);
+}
+
+//placeholder mixin - accepts an element and color,
+//then implements psuedo class with this color
+.placeholder-text(@selector; @color) {
+  @{selector}::-webkit-input-placeholder {
+    color: @color;
+  }
+  @{selector}::-moz-placeholder {
+    color: @color;
+  }
+  @{selector}:-ms-input-placeholder {
+    color: @color;
+  }
+  @{selector}:-moz-placeholder {
+    color: @color;
+  }
+  @{selector}::placeholder {
+    color: @color;
+  }
+
+}
+
+//applys display: flex with prefixes
+.display-flex() {
+  display: -webkit-flex;
+	display: -ms-flexbox;
+	display: -ms-flex;
+	display: flex;
+}
+
+//applys align-items prop with prefixes
+//takes a value to set align items to
+.align-items(@value) {
+  -webkit-align-items: @value;
+  -ms-align-items: @value;
+  align-items: @value;
+}

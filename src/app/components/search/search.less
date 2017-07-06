@@ -1,0 +1,26 @@
+@import "../../assets/less/mixins.less";
+
+#search {
+  height: ~"calc(100% - 65px)"; //less breaks calc, so evaulate with ~ operator
+
+  .search-results-recent-wrapper {
+    width: 100%;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    .display-flex();
+    height: 100%;
+    height: ~"calc(100% - 85px)"; //less breaks calc, so evaulate with ~ operator
+  }
+
+ .search-section {
+    box-sizing: border-box;
+
+    .section-header {
+      padding: 20px 35px;
+    }
+  }
+
+ .inline {
+  overflow-y: auto;
+ }
+
+}

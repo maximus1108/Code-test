@@ -1,0 +1,32 @@
+@import "../../../../assets/less/global.less";
+@import "../../../../assets/less/mixins.less";
+
+#search #search-results {
+
+  .result-item {
+    padding: 20px;
+    .display-flex();
+    .align-items(center);
+    font-size: 20px;
+
+
+    .result-item-image {
+      display: inline-block;
+      border-radius: 100%;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .result-item-textwrapper{
+      display: inline-block;
+      margin-left: 20px;
+
+
+      .result-item-role {
+        color: @yellow;
+      }
+
+    }
+
+  }
+
+}

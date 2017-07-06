@@ -1,0 +1,22 @@
+@import "../../../../assets/less/global.less";
+@import "../../../../assets/less/mixins.less";
+
+#search #search-input .search-btn{
+  background: @darkestRed;
+  border: 0;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  right: 0px;
+  .radial-gradient-background(circle at top, @yellow 0,  @lightRed 90%; @yellow);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../../assets/less/global.less";
+@import "../../../assets/less/mixins.less";
+
+#search #search-results {
+  background: @darkMediumRed;
+  width: 70%;
+
+  .section-header {
+      //linear-gradient-background mixin for prefixing
+    .linear-gradient-background(9deg; @darkMediumRed 0%;  darken(@darkMediumRed, 3%) 70%;  @darkMediumRed);
+    padding: 20px;
+  }
+
+  .results-list {
+
+    list-style: none;
+
+    //give every other element a differnt gradient and shadow
+    li:nth-child(2n-1){
+      //linear-gradient-background mixin for prefixing
+      .linear-gradient-background(9deg; @lightMediumRed 0%;  darken(@lightMediumRed, 3%) 70%;  @darkMediumRed);
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    }
+
+  }
+}
